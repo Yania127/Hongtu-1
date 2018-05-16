@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>X图网</title>
+		<link rel="stylesheet" type="text/css" href="~/Content/css/index.css" media="screen"/>
+	</head>
+	<body>
+		<input type="hidden" id="isSendAjaxUser" value="1"><!-- 还不知道什么用-->
+		<div class="header">
+			<div class="header-wrap clearfix">
+				<div class="header-log">
+					<a href="javascript:;" title="X图网"><img src="~/Content/img/logo.png" alt="X图网"></a>
+				</div>
+				<!-- 鼠标移过，会出现二级导航-->
+				<div class="header-nav">
+					<!-- 当页面向下滚动到一定高度时头部出现搜索框-->
+					<div class="header-search" style="display: none;">
+						<div class="search-swap">
+							<form class="header-search-form" action="" method="post">
+								<input type="text" class="search-text" maxlength="30" name="" id="header-search-text" placeholder="请输入标题、关键词、作品编号搜索">
+								<input type="submit" class="search-submit button red" value="">
+							</form>
+							<div class="search-result" id="header-search-result">
+								<dl class="result-list clearfix search-history">
+									<i class="icon"></i>
+									最近搜索:
+								</dl>
+								<div class="result-all">
+									<dl class="result-list clearfix">
+										<dt class="list-tab on">1</dt>
+										<dd class="list-name" data-urls>五一</dd><!-- 通过自定义属性urls结合js来实现跳转页面-->
+										<dd class="list-count">约26,528结果</dd>
+									</dl> 
+									<dl class="result-list clearfix">
+										<dt class="list-tab on">2</dt>
+										<dd class="list-name" data-urls>夏天</dd>
+										<dd class="list-count">约16,430结果</dd>
+									</dl>
+									<dl class="result-list clearfix">
+										<dt class="list-tab on">3</dt>
+										<dd class="list-name" data-urls>母亲节</dd>
+										<dd class="list-count">约69,848结果</dd>
+									</dl>
+									<dl class="result-list clearfix">
+										<dt class="list-tab">4</dt>
+										<dd class="list-name" data-urls>春季校招简历</dd>
+										<dd class="list-count">约1,528结果</dd>
+									</dl>
+									<dl class="result-list clearfix">
+										<dt class="list-tab">5</dt>
+										<dd class="list-name" data-urls>哈哈哈哈哈哈哈哈哈哈哈</dd>
+										<dd class="list-count">约328结果</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul id="nav" style="display: block;">
+						<li>
+							<a href="javascript:;" style="color: #c82129;">首页</a>
+						</li>
+						<li>
+							<a href="javascript:;">发现</a>
+							<div class="nav-list">
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">设计素材</a>
+							<div class="nav-list">
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>哈哈</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>哈哈</span>
+								</a>
+
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>哈哈</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>哈哈</span>
+								</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">背景模版</a>
+							<div class="nav-list">
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦</span>
+								</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">成品图库</a>
+							<div class="nav-list">
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦2</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦2</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦2</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦2</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦2</span>
+								</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">···</a>
+							<div class="nav-list">
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+								<a href="javascript:;">
+									<i class="icon icon-h-xx1"></i>
+									<span>啦啦啦啦</span>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="header-button">
+					<a href="javascript:;" class="button-bevel red">
+						<span class="users"></span> 登录
+					</a>
+					<a href="javascript:;" class="button-bevel red">
+						<span class="adduser"></span> 注册
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="lunbo">
+			<!--图片轮播区-->
+			<div class="lunbo-slide">
+				<ul class="slide-img">				
+			        <li class="current" style="opacity: 1; background-color: #F8F4EB;"><a href="javascript:;" title=""><img src="~/Content/img/index/lunbo/01.jpg" width="1200" height="480"></a></li>
+			        <li class="" style="opacity: 0; background-color: #F8F4EB;"><a href="javascript:;" title=""><img src="~/Content/img/index/lunbo/02.jpg" width="1200" height="480"></a></li>
+			        <li class="" style="opacity: 0; background-color: #FAF9F7;"><a href="javascript:;" title=""><img src="~/Content/img/index/lunbo/03.jpg" width="1200" height="480"></a></li>
+			        <li class="" style="opacity: 0; background-color: #FDFCF4;"><a href="javascript:;" title=""><img src="~/Content/img/index/lunbo/04.png" width="1200" height="480"></a></li>
+			        <li class="" style="opacity: 0; background-color: #FFE860;"><a href="javascript:;" title=""><img src="~/Content/img/index/lunbo/05.jpg" width="1200" height="480"></a></li>
+					<li class="" style="opacity: 0; background-color: #F6EDE4;"><a href="javascript:;" title=""><img src="~/Content/img/index/lunbo/06.jpg" width="1200" height="480"></a></li>
+				</ul>
+				<ul class="slide-count">
+			        <li class="current">1</li>
+			        <li class="">2</li>
+			        <li class="">3</li>
+			        <li class="">4</li>
+			        <li class="">5</li>
+			        <li class="">6</li>
+				</ul>
+				<a class="backward">prev</a>
+				<a class="forward">next</a>
+				<!-- 底部文本栏-->
+				<div class="subText">
+					<div class="subText-wrap">
+						<p><a href="javascript:;" title="转入招聘详情页">【活动】小伙伴这边看过来→宏图网招聘UI设计师啦</a></p>
+					</div>
+				</div>
+			</div>
+			<!-- 搜索框区-->
+			<div class="search">
+				<div class="search-swap">
+					<form class="search-form" action="" method="post">
+						<input type="text" class="search-text" maxlength="30" name="" id="search-text" placeholder="请输入标题、关键词、作品编号搜索">
+						<input type="submit" class="search-submit button red" value=" ">
+					</form>
+					<div class="search-result" id="search-result">
+						<dl class="result-list clearfix search-history">
+							<i class="icon"></i>
+							最近搜索:
+						</dl>
+						<div class="result-all">
+							<dl class="result-list clearfix">
+								<dt class="list-tab on">1</dt>
+								<dd class="list-name" data-urls>五一</dd><!-- 通过自定义属性urls结合js来实现跳转页面-->
+								<dd class="list-count">约26,528结果</dd>
+							</dl>
+							<dl class="result-list clearfix">
+								<dt class="list-tab on">2</dt>
+								<dd class="list-name" data-urls>夏天</dd>
+								<dd class="list-count">约16,430结果</dd>
+							</dl>
+							<dl class="result-list clearfix">
+								<dt class="list-tab on">3</dt>
+								<dd class="list-name" data-urls>母亲节</dd>
+								<dd class="list-count">约69,848结果</dd>
+							</dl>
+							<dl class="result-list clearfix">
+								<dt class="list-tab">4</dt>
+								<dd class="list-name" data-urls>春季校招简历</dd>
+								<dd class="list-count">约1,528结果</dd>
+							</dl>
+							<dl class="result-list clearfix">
+								<dt class="list-tab">5</dt>
+								<dd class="list-name" data-urls>哈哈哈哈哈哈哈哈哈哈哈</dd>
+								<dd class="list-count">约328结果</dd>
+							</dl>
+						</div>
+					</div>
+					<div class="search-hot">
+						<span>热门搜索 :</span>
+						<a href="javascript:;" target="" class="">名片</a>
+						<a href="javascript:;" target="" class="">招聘海报</a>
+						<a href="javascript:;" target="" class="text-red">夏季上新</a>
+						<a href="javascript:;" target="" class="">插画</a>
+						<a href="javascript:;" target="" class="text-red">毕业答辩PPT</a>
+						<a href="javascript:;" target="" class="">母亲节</a>
+					</div>
+				</div>
+				
+			</div>		
+		</div>
+       
+		<div class="main">
+			<div class="main-title1-clearfix">
+				<!--主体图片展示区-->
+				<div class="main-title1">
+					<div class="main-title1-img">
+						<img src="~/Content/img/index/title.png" />						
+					</div>
+					<span>主题分类</span>
+					<ul>
+						<li><a href="javascript:;">设计素材</a></li>
+						<li><a href="javascript:;">背景模板</a></li>
+						<li><a href="javascript:;">成品样图</a></li>
+						<li><a href="javascript:;">会员专区</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-theme-clearfix">
+				<div class="main-theme">
+					<ul>
+						<li>
+							<a href="http://www.baidu.com" >
+    							<div class="hovereffect">
+       								<img class="img-responsive" src="~/Content/img/index/theme/1.jpg" alt="">
+           							<div class="overlay">
+                						<h2>设计素材</h2>
+                						<h2>作者福利|速来领取</h2>
+            						</div>
+    							</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" >
+    							<div class="hovereffect">
+       								<img class="img-responsive" src="~/Content/img/index/theme/2.jpg" alt="">
+           							<div class="overlay">
+                						<h2>背景模板</h2>
+                						<h2>海量背景|等你来挑</h2>
+            						</div>
+								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" >
+    							<div class="hovereffect">
+       								<img class="img-responsive" src="~/Content/img/index/theme/3.jpg" alt="">
+           							<div class="overlay">
+                						<h2>成品图库</h2>
+               							<h2>一切成品|免费抱走</h2>
+           							</div>
+   								</div>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:;" >
+    							<div class="hovereffect">
+       								<img class="img-responsive" src="~/Content/img/index/theme/4.jpg" alt="">
+           							<div class="overlay">
+                						<h2>会员专区</h2>
+               							<h2>畅享全站免费素材</h2>
+           							</div>
+           							<span>会员专区</span>
+   								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-title2-clearfix">
+				<div class="main-title2">
+					<div class="main-title2-img">
+						<img src="~/Content/img/index/find.png">						
+					</div>
+					<span>大家都在逛</span>
+					<ul>
+						<li><a href="javascript:;">三严三实</a></li>
+						<li><a href="javascript:;">五大发展理念</a></li>
+						<li><a href="javascript:;">四个意识</a></li>
+						<li><a href="javascript:;">党风廉政建设</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="main-picture">
+				<!-- 不断下拉图片渐变出现-->
+				<div class="main-picture-column">
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/1.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤1630</a></span>
+						</div>
+					</div>
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/2.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤1340</a></span>
+						</div>
+					</div>
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/11.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤1280</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="main-picture-column">
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/3.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤933</a></span>
+						</div>
+					</div>
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/4.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤284</a></span>
+						</div>
+					</div>
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/5.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤934</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="main-picture-column">
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/6.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤2841</a></span>
+						</div>
+					</div>
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/7.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤899</a></span>
+						</div>
+					</div>
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/8.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤1280</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="main-picture-column">
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/9.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤112</a></span>
+						</div>
+					</div>
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/10.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤923</a></span>
+						</div>
+					</div>
+					<div class="main-pics">
+						<a href="javascript:;"><img class="pics" src="~/Content/img/index/more/12.jpg" /></a>
+						<div class="main-pics-txt">
+							<a href="javascript:;"><img class="touxiang" src="~/Content/img/index/more/touxiang.jpg" /></a>
+							<ul>
+								<li><a href="javascript:;">鲤鱼quq</a></li>
+								<li><a href="javascript:;">红色经典</a></li>
+							</ul>
+							<span><a href="javascript:;">❤733</a></span>
+						</div>
+					</div>
+				</div>
+				<div class="main-more">
+					<a href="javascript:;">加载更多</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer">
+			<div class="footer-pink clearfix">
+				<div class="footer-information">
+					<div class="footer-logo clearfix">
+						<img src="~/Content/img/logo.png" alt="X图网">
+					</div>
+					<div class="footer-about clearfix">
+						<ul>
+							<li><a href="javascript:;">关于我们</a></li>
+							<li><a href="javascript:;">注册声明</a></li>
+							<li><a href="javascript:;">版权声明</a></li>
+							<li><a href="javascript:;">售后服务</a></li>
+							<li><a href="javascript:;">热门搜索</a></li>
+							<li><a href="javascript:;">联系我们</a></li>
+						</ul>
+					</div>
+					<div class="footer-QRcode clearfix">
+						<img src="~/Content/img/WeChat.jpg" />
+						<img src="~/Content/img/WeiBo.jpg" />
+					</div>
+					<!-- 回到上方的小按钮（随网页下拉飘动）-->
+				</div>
+			</div>
+			<div class="footer-banquan">
+				宏图网Copyright©沪IPC100411451号-67
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="~/Content/js/index.js"></script>
+</html>

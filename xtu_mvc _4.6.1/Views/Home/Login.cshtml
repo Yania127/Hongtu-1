@@ -1,0 +1,95 @@
+﻿
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<head>
+		<title>宏图网-登录</title>
+		<link rel="stylesheet" href="~/Content/css/index.css" type="text/css" media="screen">
+	</head>
+	<body>
+		<input type="hidden" id="isSendAjaxUser" value="1"><!-- 还不知道什么用-->
+		<div class="header">
+		 	<div class="header-wrap clearfix">
+					<div class="header-log">
+						<a href="javascript:;" title="宏图网"><img src="~/Content/img/logo.png" alt="宏图网"></a>
+					</div>
+					<div class="header-button">
+						<a href="login" class="button-bevel red">
+							<span class="users"></span> 登录
+						</a>
+						<a href="enroll" class="button-bevel red">
+							<span class="adduser"></span> 注册
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="login-main">
+			<div class="login-main-wrap">
+				<img src="~/Content/img/loginEnroll/2.jpg" width="1200px" height="472px">
+				<div class="login-wrap">
+					<div class="login-header">
+						<div class="login-header-btn on" style="margin-left: 74px;">登录</div>
+						<a id="enroll" class="login-header-btn" href="enroll">注册</a>
+					</div>
+					<div class="login-content">
+						<div class="login-others">
+							<a id="qq" class="other-logo" href="javascript:;">
+								<i></i>
+								<span>QQ登录</span>
+							</a>
+							<a id="wx" class="other-logo" href="javascript:;">
+								<i></i>
+								<span>微信登录</span>
+							</a>
+							<a id="sina" class="other-logo" href="javascript:;">
+								<i></i>
+								<span>微博登录</span>
+							</a>
+						</div>
+						<div class="login-box">
+							<p class="cutting-line">
+								<span>或</span>
+							</p>
+							<div class="account-box">
+								<div class="login-form">
+									<div class="input-inline">
+										<i class="input-icon i-user"></i>
+										<input id="account" type="text" autocomplete="off" placeholder="请输入账号/手机号">
+										<p class="warning-text"></p>
+									</div>
+									<div class="input-inline">
+										<i class="input-icon i-password"></i>
+										<input id="passwd" type="password" autocomplete="off" placeholder="请输入密码">
+										<p class="warning-text"></p>
+									</div>
+									<div class="login-submit">
+										<a href="javascript:;" class="button rounded red">
+											<span class="flag"></span>
+											登录
+										</a>
+									</div>
+									<p class="login-switch clearfix">
+										<a href="javascript:;">忘记密码？</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="login-footer">
+							<p><a href="javascript:;"rel="">账号密码登录</a></p>
+						</div>
+						<div class="agreement-alert">
+							登录注册请仔细阅读：
+							<a href="javascript:;" target="_blank">《注册声明》</a>
+							<a href="javascript:;" target="_blank">《版权声明》</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="login-footer-banquan">
+			宏图网Copyright©沪IPC100411451号-67
+		</div>
+	</body>
+	<script type="text/javascript" src="~/Content/js/loginEnroll.js"></script>
+</html>

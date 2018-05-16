@@ -1,0 +1,1424 @@
+/*马云松-570*/
+@font-face {
+  font-family: 'EntypoRegular';
+  src: url('/fonts/entypo-webfont.eot');
+  src: url('/fonts/entypo-webfont.eot?#iefix') format('embedded-opentype'),
+       url('/fonts/entypo-webfont.woff') format('woff'),
+       url('/fonts/entypo-webfont.ttf') format('truetype'),
+       url('/fonts/entypo-webfont.svg#EntypoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body{
+	font-family: "Microsoft YaHei",simsun,arial; 
+	height: 100%;
+	background: #f3ecec;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+input{
+	border: 0;	
+	outline: 0;
+}
+
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+ul{
+	list-style-type: none;
+}
+
+/*清除浮动带来的影响*/
+.clearfix:after{
+	content: "";
+	display: block;
+	clear: both;
+}
+
+/*头部样式*/
+.header{
+	min-width: 1200px;
+	width: 100%;/*第一父层保证整个头部始终占宽度的100%*/
+	height: 70px;
+	background-color: #fff4f5;
+}
+
+.header-wrap{
+	min-width: 1200px;
+	width: 1200px;/*在这种第二父层上设置具体宽度，下面的子层全用100%来自适应*/
+	margin: 0 auto;
+	height: 70px;
+	position: relative;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff4f5;
+	font-size: 0;/*处理超链接中的文字，有时候文字被盖住了而已，但为了被搜索引擎匹配到需要文字*/
+}
+
+.header-log{
+	width: 212px;
+	height: 70px;
+	line-height: 70px;	
+	margin-left: 25px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.header-log a{
+	display: block;
+	width: inherit;
+	height: inherit;
+	float: left;
+	cursor: pointer;
+}
+
+.header-nav{
+	min-width: 1200px;
+	width: 100%;
+	height: 70px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	z-index: 10;
+}
+
+.header-nav ul{
+	height: 70px;
+	margin-left: 240px;
+	overflow: hidden;
+	zoom: 1;
+}
+
+.header-nav ul li{
+	width: 116px;
+	height: 70px;
+	line-height: 70px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #f37d82;
+	box-sizing: border-box;
+	padding: 0 20px;
+	float: left;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.header-nav ul li:nth-child(1){
+	width: auto;
+}
+
+.header-nav ul li:nth-child(n+2):hover{
+	color: #fff;
+	background: #DB7093;
+}
+
+.header-nav ul li>a{
+	display: block;
+	color: inherit;
+	position: relative;
+}
+
+.header-nav .nav-list{
+	display: none;
+	position: absolute;
+	height: 108px;
+	top: 71px;
+	left: 0;
+	width: 100%;
+	background: #fff4f5;
+	opacity: 0.85;
+	filter: alpha(opacity=85);
+	line-height: initial;
+	text-align: center;
+}
+
+.header-nav .nav-list a{
+	position: relative;
+	display: inline-block;
+	padding-top: 22px;
+	width: 112px;
+	height: inherit;
+	text-align: center;
+	background: transparent;
+}
+
+.header-nav .nav-list .icon {
+    display: block;
+    margin: 0 auto 10px;
+    width: 32px;
+    height: 32px;
+    color: #999;
+    font-size: 31px; /*这里使用@font-face做图标，所以指定字体大小*/
+    background: red;
+}
+
+.header-nav .nav-list a span {
+    font-size: 14px;
+    color: #f37d82;
+}
+
+.header-nav .nav-list a:hover span{
+	color: red;
+}
+
+.header-button{
+	position: absolute;
+	display: inline-block;
+	width: auto;
+	height: 70px;
+	top: 0;
+	padding-top: 15px;
+	right: 20px;
+	box-sizing: border-box;
+	z-index: 10;
+}
+
+.header-button a{
+	margin-right: 8px;
+}
+
+.header-button a:last-child{
+	color: #DB7093;
+	background: #fff;
+  background: -webkit-linear-gradient(to bottom,  #eee 0%,#fff 100%);
+  background: linear-gradient(to bottom,  #fff 0%,#eee 100%);
+}
+
+.header-button a:last-child:hover{
+	color: #fff;
+	background: -webkit-linear-gradient(to bottom,  #e25b53 0%,#dd2011 100%);
+  background: linear-gradient(to bottom,  #e25b53 0%,#dd2011 100%);
+}
+
+.header-search{
+	display: none;
+	width: 550px;
+	height: 51px;
+	margin: 5px 0 0 325px;
+}
+
+.header-search .header-search-form{
+	width: 100%;
+  height: 100%;
+  padding: 4px 1px 4px 4px;
+}
+
+.header-fix{
+	position: fixed;
+	top: 0;
+	z-index: 999;	
+}
+
+/*头部按钮细节样式*/
+.button, 
+.button-bevel {
+  /*不要用宽高来设置按钮，要用padding来保证缩放时可以自动挤压文字大小*/
+  /*width: 78px;
+  height: 35px;*/
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 34px;
+  padding: 7px 20px 9px;/*统一的按钮长宽*/
+  color: #fff;
+  letter-spacing: 3px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+  text-transform: capitalize;
+  transition: 0.1s linear;
+  border-radius: 1px;
+  box-shadow: inset rgba(255,255,255,0.3) 1px 1px 0;
+}
+
+.button:hover, 
+.button-bevel:hover {
+	color: #fff;
+} 
+  
+.button:active {
+  box-shadow: inset rgba(0,0,0,0.4) 0px 0px 6px;
+}
+
+.button-bevel {
+  vertical-align: top;
+  border-radius: 4px;
+  border: none;
+  padding: 2px 18px;/*自定义button-bevel类按钮的长宽*/
+}
+
+/*制造点击后按下去的效果*/
+.button-bevel:active {
+  position: relative;
+  top: 5px;
+}
+
+.rounded {
+	padding: 7px 150px 9px;
+	border-radius: 20px;
+}
+
+.red {
+  background: #e25b53;
+  background: -webkit-linear-gradient(to bottom,  #e25b53 0%,#dd2011 100%);
+  background: linear-gradient(to bottom,  #e25b53 0%,#dd2011 100%);
+  border: 1.6px solid #c42222;
+}
+
+.red:hover {
+  background: #dd7671;
+  background: -webkit-linear-gradient(to bottom,  #dd7671 0%,#dd2011 100%);
+  background: linear-gradient(to bottom,  #dd7671 0%,#dd2011 100%);
+}
+
+.button-bevel.red {
+  box-shadow: #88180e 0 2px 0, rgba(0, 0, 0, 0.3) 0 5px 3px;
+}
+/*点击后下半部分阴影减小效果*/
+.button-bevel.red:active {
+  box-shadow: #88180e 0 2px 0, rgba(0, 0, 0, 0.2) 0 5px 0;  
+}
+
+.button span, 
+.button-bevel span{
+  font-family: 'EntypoRegular';/*？？？这样应该能引用到自定义字体中的图标的，不知道为什么不行*/
+  font-size: 20px;
+  font-weight: normal;
+  vertical-align: middle; 
+  line-height: 0;
+  margin-right: .1em;
+}
+
+.adduser:after { content: "-"; font-size: 20px; }
+.users:after { content: "+"; font-size: 20px; }
+
+.lunbo{
+	min-width: 1200px;
+	width: 100%;
+	height: 480px;
+	position: relative;
+} 
+
+/*搜索框样式*/
+.search{
+	min-width: 550px;
+	width: 100%;
+	position: relative;
+	top: -223px;
+	z-index: 15;
+}
+
+.search-swap{
+	/*用该层包裹一下，方便子层进行定位，这样放大缩小时可以按比例缩放*/
+	position: relative;
+	width: 550px;
+	height: 51px;
+	margin: 0 auto;
+}
+
+.search-form{
+	width: 100%;
+	height: 100%;
+	padding: 4px 1px 4px 4px;
+	background-color: rgba(0,0,0,.15);
+}
+
+.search-text{
+	width: 450px;
+	height: 100%;
+	line-height: 51px;
+	float: left;
+	padding-left: 16px;
+	box-sizing: border-box;
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	font-size: 16px;
+	font-style: italic;
+	letter-spacing: 1px;
+	vertical-align: center;
+	color: #adadad;
+	border: 1px solid #adadad;
+	background: rgba(255,255,255,.85);
+}
+
+.search-submit{
+	width: 100px;
+	height: 100%;
+	float: right;
+	background: url(../img/search.png);
+}
+
+.search-submit:before{
+	content: url(../img/search.png);/*可以在这里加搜索按钮的图标*/
+}
+
+.search .search-hot{
+	width: 550px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	padding-left: 10px;
+}
+
+.search .search-hot span,
+.search .search-hot a{
+	font-size: 14px;
+	line-height: 14px;
+	color: #999;
+}
+
+.search .search-hot span{
+	margin-right: 6px;
+}
+
+.search .search-hot a.text-red,
+.search .search-hot a:hover{
+	color: red;
+}
+
+.search-result{
+	display: none;
+	position: absolute;
+	width: 448px;
+	top: 55px;
+	left: 5px;
+	background: #fff;
+}
+
+.result-list{
+	height: 30px;
+	line-height: 30px;
+	cursor: pointer;
+	padding: 0 12px;
+}
+
+.result-list:hover{
+	background: #eee;
+}
+
+.result-list .list-tab{
+	margin: 8px 10px 0 0;
+	width: 14px;
+	height: 14px;
+	border-radius: 3px;
+	color: #fff;
+	line-height: 1.3em;
+	text-align: center;
+	font-size: 12px;
+	font-family: arial, helvetica, sans-serif;
+	background: #f5aeb1;
+	float: left;
+}
+
+.result-list .list-tab.on{
+	background-color: #c82129;
+}
+
+.result-list .list-name{
+	font-size: 14px;
+	color: #666;
+	float: left;
+}
+
+.result-list .list-count{
+	font-size: 12px;
+	color: #999;
+	float: right;
+}
+
+.result-list.search-history{
+	height: 34px;
+	line-height: 33px;
+	font-size: 14px;
+	color: #999;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	border-bottom: 1px solid #e9e9e9;
+}
+
+/*图片轮播区样式*/
+.lunbo .lunbo-slide{
+	min-width: 1200px;
+	width: 100%;
+	height: 480px;
+	position: relative;
+	z-index: 5;
+}
+
+.lunbo-slide .slide-img{
+	position: relative;
+  min-width: 1200px;
+	width: 100%;
+  height: 480px;
+  overflow: hidden;
+  zoom: 1;
+}
+
+.lunbo-slide .slide-img li{
+	position: absolute;
+  top: 1px;
+  left: 0;
+  min-width: 1200px;
+	width: 100%;
+  height: 480px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
+  font-size: 0;
+}
+
+.lunbo-slide .slide-img li.current {
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.lunbo-slide .slide-img li a{
+	display: block;
+	min-width: 1200px;
+	width: 1200px;/*我们想要的效果就是仅图片在中间，两边自适应，所以这里才写上具体宽度*/
+	margin: 0 auto;/*居中*/
+  height: inherit; 
+}
+
+.lunbo-slide .slide-count{
+	position: absolute;
+	right: 23px;
+	bottom: 20px;
+	z-index: 6;
+}
+
+.lunbo-slide .slide-count li{
+	float: left;
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	border-radius: 26px;
+	cursor: pointer;
+	margin-right: 6px;
+	background: #f5aeb1;
+	color: #fff;
+	text-align: center;
+}
+
+.lunbo-slide .slide-count li.current{
+	color: #fff;
+	font-weight: 700;
+	background-color: #de575d;
+}
+
+.lunbo-slide > a{
+	position: absolute;
+	top: 0;
+	cursor: pointer;
+	width: 50px;
+	height: 480px;
+	background-image: url(../img/index/lunbo/lun.png);
+	background-repeat: no-repeat;
+	font-size: 0;
+	overflow: hidden;
+	opacity: 0;
+	filter: alpha(content=0);
+	transition: opacity 1s;
+}
+
+.lunbo-slide .backward{
+	left: 0;
+	background-position: 0;/*只写一个值的话，默认水平方向是center定位*/
+}
+
+.lunbo-slide .backward:hover{
+	left: 0;
+	background-position: -153px;
+}
+
+.lunbo-slide .forward{
+	right: 0;
+	background-position: -51px;
+}
+
+.lunbo-slide .forward:hover{
+	right: 0;
+	background-position: -102px;
+}
+
+.bfward{
+	opacity: 1 !important;/*确保它优先级最高*/
+}
+
+/*轮播区底部文本栏样式*/
+.subText{
+	min-width: 1200px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	z-index: 5;
+	background: -webkit-linear-gradient();
+	background: linear-gradient(to bottom,rgba(255,255,255,.3) 0%,rgba(0,0,0,.3) 100%);
+}
+
+.subText .subText-wrap{
+	min-width: 1200px;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+.subText .subText-wrap p{
+	min-width: 1200px;
+	width: 100%;
+	height: 60px;
+	text-align: center;
+	font-size: 28px;
+	line-height: 28px;
+	letter-spacing: 2px;
+	vertical-align: middle;
+}
+
+.subText .subText-wrap p>a{
+	display: block;
+	color: #fff;
+	padding-top: 8px;
+}
+
+.main{
+	width: 100%;
+	height:auto;
+}
+
+.main-title1-clearfix{
+	min-width: 1124px;
+	width: 1124px;
+	margin: 0 auto;
+	position: relative;
+	font-size: 0;
+}
+
+.main-title1{
+	margin: 90px 0px 34px;
+	height: 96px;
+	background: #c82129;
+	line-height: 96px;
+	}
+
+.main-title1-img{
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+
+.main-title1-img img{
+	height: 60px;
+	padding-top: 20px;
+}
+
+.main-title1 span{
+	float: left;
+	font-weight: bold;
+	font-size: 37px;
+	color: white;
+}
+
+.main-title1 ul{
+	padding-left: 40px;
+	float: left;
+	height: 96px;
+	overflow: hidden;
+}
+
+.main-title1 ul li{
+	padding-left: 20px;
+	height: 96px;
+	line-height: 96px;
+	font-size: 15px;
+	float: left;
+	vertical-align: middle;
+}
+
+.main-title1 ul li a{
+	color: white;
+}
+
+.main-title1 ul li a:hover{
+	color: #F5AEB1;
+}
+
+.main-theme{
+	min-width: 1124px;
+	width: 1124px;/*在这种第二父层上设置具体宽度，下面的子层全用100%来自适应*/
+	margin: 0 auto;
+	position: relative;
+	font-size: 0;/*处理超链接中的文字，有时候文字被盖住了而已，但为了被搜索引擎匹配到需要文字*/
+}
+
+.main-theme{
+	height: 180px;
+}
+
+.main-theme ul{
+	float: left;
+	height: 180px;
+	overflow: hidden;
+}
+
+.main-theme ul li{
+	padding-left: 24px;
+	width: 263px;
+	height: 180px;
+	float: left;
+	vertical-align: middle;
+}
+
+.main-theme ul li:nth-child(1){
+	padding-left: 0px;
+}
+
+.main-theme ul li a{
+	width: 100%;
+	height: 100%;
+	color: white;
+}
+
+/************主题推荐动态效果*******************/
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.hovereffect .overlay {
+  position: absolute;
+  overflow: hidden;
+  width: 80%;
+  height: 50%;
+  left: 10%;
+  top: 25%;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(0,1);
+  -ms-transform: scale(0,1);
+  transform: scale(0,1);
+}
+
+.hovereffect:hover .overlay {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  -webkit-transition: all 0.35s;
+  transition: all 0.35s;
+}
+
+.hovereffect:hover img {
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.6" /><feFuncG type="linear" slope="0.6" /><feFuncB type="linear" slope="0.6" /></feComponentTransfer></filter></svg>#filter');
+  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-size: 27px;
+  background-color: transparent;
+  color: #FFF;
+  padding: 10px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,-100%,0);
+  transform: translate3d(0,-100%,0);
+}
+.hovereffect h2:nth-child(2){
+	margin: -20px;
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+.hovereffect a, .hovereffect p {
+  color: #FFF;
+  padding: 1em 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0,100%,0);
+  transform: translate3d(0,100%,0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.hovereffect span{
+	
+}
+
+/************************主题动态效果结束********************/
+
+.main-title2-clearfix{
+	min-width: 1124px;
+	width: 1124px;/*在这种第二父层上设置具体宽度，下面的子层全用100%来自适应*/
+	margin: 0 auto;
+	position: relative;
+	font-size: 0;/*处理超链接中的文字，有时候文字被盖住了而已，但为了被搜索引擎匹配到需要文字*/
+}
+
+.main-title2{
+	margin: 90px 0px 34px;
+	height: 96px;
+	background: #c82129;
+	line-height: 96px;
+	}
+	
+.main-title2-img{
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+
+.main-title2-img img{
+	height: 60px;
+	padding-top: 20px;
+}
+
+.main-title2 span{
+	float: left;
+	font-weight: bold;
+	font-size: 37px;
+	color: white;
+}
+
+.main-title2 ul{
+	padding-left: 40px;
+	float: left;
+	height: 96px;
+	overflow: hidden;
+}
+
+.main-title2 ul li{
+	padding-left: 20px;
+	height: 96px;
+	line-height: 96px;
+	font-size: 15px;
+	float: left;
+	vertical-align: middle;
+}
+
+.main-title2 ul li a{
+	color: white;
+}
+
+.main-title2 ul li a:hover{
+	color: #F5AEB1;
+}
+
+.main-picture{
+	height: auto;
+	margin: 0 auto;
+	width: 1124px;
+	display: flex;
+  flex-wrap: wrap;
+}
+
+.main-picture-column:nth-child(n+2){
+	margin-left: 20px;	
+}
+
+.main-pics{
+	margin-bottom: 20px;
+	border: 5px solid white;
+	flex-grow: 1;
+  background-color: white;
+  width: 256px;
+}
+
+.main-pics:hover{
+	box-shadow:0px 0px 2px 3px darkgray;
+}
+
+.pics{
+	width: 256;
+  object-fit: cover;
+  max-width: 100%;
+  min-width: 100%;
+  vertical-align: bottom;
+}
+
+.main-pics-txt{
+	width: 100%;
+	height: 80px;
+}
+
+.touxiang{
+	line-height: 80px;
+	float: left;
+	width: 40px;
+	margin-left: 27px;
+	margin-top: 20px;
+}
+
+.main-pics-txt ul{
+	float: left;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+
+.main-pics-txt ul li{
+	margin-top: 5px;
+}
+
+.main-pics-txt ul li:nth-child(1) a{
+	color: #DE575D;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+.main-pics-txt ul li:nth-child(2) a{
+	color: #F5AEB1;
+	font-size: 14px;
+}
+
+.main-pics-txt span a{
+	float: left;
+	margin-left: 40px;
+	margin-top: 10px;
+	color: #DE575D;
+}
+
+.main-more{
+	width: 406px;
+	height: 56px;
+	background:#FFF4F5 ;
+	margin: 0 auto;
+	text-align: center;
+	cursor: pointer;
+	margin-top: 20px;
+	margin-bottom:50px
+}
+
+.main-more:hover{
+	background:#F5AEB1 ;
+}
+
+.main-more a{
+	display: block;
+	height: 100%;
+	width: 100%;
+	color: #F5AEB1;
+	font-size: 20px;
+	line-height: 56px;
+	font-weight: bold;
+}
+
+.main-more a:hover{
+	color: #FFF4F5;
+}
+
+
+
+/********************这里是页脚********************/
+.footer{
+	min-width: 1200px;
+	width: 100%;
+	height: 210px;
+	background: #C82129;
+	position: relative;
+}
+
+.footer-pink{
+	margin-top: 8px;
+	background:#f3ecec;
+	width: 100%;
+	height: 73%;
+	position: absolute;
+}
+
+.footer-banquan{
+	color: white;
+	width: 100%;
+	text-align: center;
+	padding-top: 175px;
+}
+
+.footer-information{
+	min-width: 1124px;
+	width: 1124px;
+	height: 90%;
+	margin: 0 auto;
+	margin-top: 8px;
+}
+
+.footer-logo,.footer-about,.footer-QRcode{
+	height: 100%;
+	width: 33%;
+	float: left;
+}
+
+.footer-about{
+	border-left: 2px solid #d9d7d8;
+	border-right: 2px solid #d9d7d8;
+}
+
+.footer-logo{
+	text-align: center;
+	line-height: 138px;
+}
+
+.footer-logo img{
+	height: 75%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+.footer-about ul{
+	width: 70%;
+	height: 80%;
+	margin: 0 auto;
+	margin-top: 13px;
+}
+
+.footer-about ul li{
+	text-align: center;
+	float: left;
+	width: 50%;
+	line-height: 40px;
+	font-size: 16px;
+}
+
+.footer-about ul li a{
+	color: #D9D7D8;
+	font-weight: bold;
+}
+
+.footer-about ul li a:hover{
+	color: #F5AEB1;
+	font-weight: bold;
+}
+
+.footer-QRcode img{
+	height: 100%;
+	padding-left: 5%;
+}
+
+.footer-QRcode img:nth-child(1){
+	padding-left: 17%;
+}
+
+/********************登录注册页面样式********************/
+.login-main{
+	min-width: 1200px;
+	width: 100%;
+	height: 472px;
+	background: #CD1527;
+}
+
+.login-main .login-main-wrap{
+	position: relative;
+	min-width: 1200px;
+	width: 1200px;
+	height: 472px;
+	margin: 0 auto;
+}
+
+.login-main .login-wrap{
+	position: absolute;
+	width: 400px;
+	height: 440px;
+	top: 18px;
+	right: 0;
+	border-radius: 4px;
+	background-color: rgba(255,255,255,.86);
+	-webkit-box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+	box-shadow: 0 4px 6px 0 rgba(0,0,0,.2);
+	
+}
+
+.login-wrap,.login-wrap .login-content{
+	/*overflow: hidden;*/
+}
+
+.login-header,.login-header-btn{
+	height: 62px;
+	text-align: center;
+}
+
+.login-header-btn{
+	display: inline-block;
+	position: relative;
+	width: 74px;
+	margin-right: 84px;
+	font-size: 20px;
+	line-height: 62px;
+	color: #666;
+	cursor: pointer;
+}
+
+.login-header-btn:after{
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 74px;
+	height: 2px;
+	background: #e4363a;
+	
+	-ms-transform: scale(0);
+	-moz-transform: scale(0);
+	-webkit-transform: scale(0);
+	transform: scale(0);
+	
+	-moz-transition: all .2s;
+	-webkit-transition: all .2s;
+	transition: all .2s;
+}
+
+.login-header-btn.on:after{
+	-ms-transform: scale(1);
+	-moz-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.login-header-btn.on,.login-header-btn:hover{
+	color: #e4363a;
+}
+
+.login-header-btn:hover:after
+{
+	-ms-transform: scale(1);
+	-moz-transform: scale(1);
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.login-content{
+	/*overflow: hidden;*/
+}
+
+.login-content .login-others{
+	text-align:center;
+	padding-top:50px;
+	/*-moz-transition: all .28s;
+	-webkit-transition: all .28s;
+	transition: all .28s;*/
+}
+
+.login-content .login-others .other-logo{
+	display: inline-block;
+	width: 82px;
+	margin-left: 38px;
+	text-align: center;
+}
+
+.login-content .login-others .other-logo:first-child{
+	margin-left: 0;
+}
+
+.login-content .login-others .other-logo i{
+	width: 82px;
+	height: 82px;
+	display: block;
+	background: url(../img/loginEnroll/login_icon.png) no-repeat;
+	margin-bottom: 20px;
+}
+
+.login-content .login-others .other-logo:nth-child(1) i{
+	background-position: 0 0;
+}
+
+.login-content .login-others .other-logo:nth-child(1):hover i{
+	background-position: 0 -84px;
+}
+
+.login-content .login-others .other-logo:nth-child(2) i{
+	background-position: -168px 0;
+}
+
+.login-content .login-others .other-logo:nth-child(2):hover i{
+	background-position: -168px -84px;
+}
+
+.login-content .login-others .other-logo:nth-child(3) i{
+	background-position: -84px 0;
+}
+
+.login-content .login-others .other-logo:nth-child(3):hover i{
+	background-position: -84px -84px;
+}
+
+.login-content .login-others .other-logo span{
+	color: #888;
+	font-size: 14px;
+}
+
+.login-others-cards{
+	text-align: center;
+	padding-top: 28px;
+	-moz-transition: all .28s;
+	-webkit-transition: all .28s;
+	transition: all .28s;
+}
+
+.login-content .login-others-cards .other-logo{
+	display: inline-block;
+	width: 110px;
+	height: 40px;
+	line-height: 40px;
+	margin-left: 5px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.login-content .login-others-cards .other-logo:nth-child(1){
+	margin-left: 0;
+	background-color: #19a9f1;
+}
+
+.login-content .login-others-cards .other-logo:nth-child(2){
+	background-color: #0b0;
+}
+
+.login-content .login-others-cards .other-logo:nth-child(3){
+	background-color: #ed2b2f;
+}
+
+.login-content .login-others-cards .other-logo:hover{
+	opacity: 0.78;
+	filter: alpha(opacity=78);
+}
+
+.login-content .login-others-cards .other-logo i{
+	vertical-align: sub;
+	display: inline-block;
+	background: url(../img/loginEnroll/login_icon.png) no-repeat;
+}
+
+.login-content .login-others-cards .other-logo:nth-child(1) i{
+	height: 21px;
+	width: 20px;
+	background-position: 0 -168px;
+}
+
+.login-content .login-others-cards .other-logo:nth-child(2) i{
+	height: 22px;
+	width: 26px;
+	background-position: -23px -168px;
+}
+
+.login-content .login-others-cards .other-logo:nth-child(3) i{
+	height: 20px;
+	width: 24px;
+	background-position: -52px -168px;
+}
+
+.login-content .login-others-cards .other-logo span{
+	font-size: 14px;
+	color: #fff;
+}
+
+.login-content .login-box{
+	display: none;
+}
+
+.login-content .login-box .cutting-line{
+	position: relative;
+	width: 340px;
+	margin: 12px auto;
+	text-align: center;
+}
+
+.login-content .login-box .cutting-line span{
+	position: relative;
+	z-index: 2;
+	font-size: 15px;
+	color: #888;
+	padding: 0 5px;
+}
+
+.login-content .login-box .cutting-line:after{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	width: 340px;
+	left: 0;
+	top: 11px;
+	height: 1px;
+	background-color: #ccc;
+	
+}
+
+.login-content .login-form{
+	width: 340px;
+	margin: 0 auto;
+}
+
+.login-form .input-inline{
+	width: 340px;
+	margin-bottom: 8px;
+	position: relative;
+}
+
+.login-form .input-inline .input-icon{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	background: url(../img/loginEnroll/login_icon.png) no-repeat;
+}
+
+.login-form .input-inline .input-icon.i-user{
+	width: 18px;
+	height: 20px;
+	background-position: -79px -168px;
+}
+
+.login-form .input-inline .input-icon.i-password{
+	width: 18px;
+	height: 19px;
+	background-position: -120px -168px; 
+}
+
+.login-form .input-inline input{
+	width: 340px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #e3e3e3;
+	border-radius: 4px;
+	font-size: 14px;
+	color: #333;
+	padding-left: 42px;
+	box-sizing: border-box;
+}
+
+.login-form .input-inline input:focus{
+	border: 1px solid #2be076;
+}
+
+.login-form .input-inline input.danger{
+	border: 1px solid #fda233;
+}
+
+.login-form .input-inline .warning-text{
+	/*display: block!important;*/
+}
+
+.login-form .input-inline .warning-text{
+	font-size: 12px;
+	overflow: hidden;
+	height: 0;
+	-moz-transition: all .28s;
+	-webkit-transition: all .28s;
+	transition: all .28s;
+}
+
+.login-form .input-inline .warning-text.show{
+	padding-top: 5px;
+	height: auto;
+}
+
+.login-form .input-inline .warning-text span{
+	color: #666;
+}
+
+.login-form .input-inline .warning-text i{
+	display: inline-block;
+	vertical-align: sub;
+	height: 14px;
+	width: 14px;
+	background: url(../img/loginEnroll/login_icon.png) no-repeat;
+}
+
+.login-form .login-submit{
+	margin-top: 12px;
+}
+
+.login-form .login-switch{
+	width: 340px;
+	margin-top: 10px;
+}
+
+.login-form .login-switch a{
+	color: #666;
+	font-size: 14px;
+	float: right;
+}
+
+.login-form .login-switch a:hover{
+	color: #e4363a;
+}
+
+.login-form .input-inline .warning-text i.danger-icon{
+	background-position: -34px -193px;
+}
+
+.login-content .login-footer{
+	margin-top: 60px;
+}
+
+.login-content .login-footer p{
+	text-align: center;
+	
+}
+
+.login-content .login-footer p a{
+	color: #e4363a;
+	font-size: 16px;
+}
+
+.login-content .login-footer p a:hover{
+	text-decoration: underline;
+}
+
+.login-content .agreement-alert{
+	text-align: center;
+	font-size: 12px;
+	color: #666;
+	margin-top: 18px;
+}
+
+.login-content .agreement-alert a{
+	color: #666;
+}
+
+.login-content .agreement-alert a:hover{
+	color: #e4363a;
+}
+
+
+
+
+.login-footer-banquan{
+	min-width: 1200px;
+	height: 56px;
+	line-height: 56px;
+	margin-top: 20px;
+	font-size: 16px;
+	font-weight: 600;
+	color: #e4363a;
+	text-align: center;
+	border-top: 1px solid #ccc;
+}
+
